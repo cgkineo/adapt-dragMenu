@@ -1,0 +1,17 @@
+{
+  "name": "adapt-dragMenu",
+  "version": "1.0.0",
+  "framework": "^2.0.0",
+  "homepage": "https://github.com/cgkineo",
+  "issues": "",
+  "displayName": "Drag menu",
+  "menu": "dragMenu",
+  "description": "A click and drag menu",
+  "main": "js/adapt-dragMenu.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-menu"
+  ],
+  "license": "GPLv3",
+  "targetAttribute": "_dragMenu"
+}

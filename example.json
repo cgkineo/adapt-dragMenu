@@ -1,0 +1,48 @@
+/* ----- course.json ----- */
+"_globals": {
+    "_accessibility": {
+        "_ariaLabels": {
+            "visited": "Visited"
+            // Add 'visited' ariaLabel to _accessibility in course.json for quicknav icon visited state aria label.
+        }
+    }
+},
+
+"_dragMenu": {
+    "_background": {
+    	"_src": "course/en/images/menu/background.jpg",
+    	// Defines the background image for the drag menu - this image should be oversized.
+    	"_height": 1725,
+    	"_width": 2300
+    	// Set the exact dimensions of the background image.
+    },
+    "_hasQuicknav": true,
+    // Sets whether the icon based navigation is enabled or disabled. This navigation appears fixed centrally to the bottom of the browser and inherits the '_icon' set on the contentObject. Note: this navigation is required if the course is accessible.
+    "_hasArrows": {
+        "_isEnabled": false,
+        // Sets whether display arrows render at the edge of the browser. They are designed to indicate the image is movable.
+        "_arrowTopIcon": "icon-controls-up",
+        "_arrowRightIcon": "icon-controls-right",
+        "_arrowDownIcon": "icon-controls-down",
+        "_arrowLeftIcon": "icon-controls-left"
+        // Define the arrow icons.
+    },
+    "_instructionOverlay": {
+        "_isEnabled": true,
+        // Sets whether to render the instruction overlay which contains instruction text and a graphic to advise users on how to interact with the menu.
+        "body": "To navigate the menu, select and drag the background. Select here to dismiss.",
+        "_graphic": "course/en/images/menu/click_drag.gif"
+    }
+},
+
+/* ----- contentObjects.json ----- */
+"_dragMenuItem": {
+	// Attach to each contentObject menu item
+	"_icon": "course/en/images/menu/icon-1.png",
+	// Defines the icon to be used on the menu item and quicknav item, default dimensions are 50x50.
+	"_position": {
+		"_left": 50,
+		"_top": 50
+		// Sets the contentObject menu items position on the background. Value range 0 to 100.
+	}
+},

@@ -1,0 +1,210 @@
+#wrapper.wrapper-override {
+    // Override for large screens so background not limited by 1400px max width
+    max-width: inherit;
+
+    .navigation {
+        // Override navigation box shadow
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+        // Override to centre navigation on large screens due to max width removed from wrapper
+        left: 0;
+        right: 0;
+    }
+}
+
+.drag-menu {
+    overflow: hidden;
+
+    // Menu Header
+    .menu-header {
+        background-color: fade(@theme-rich-black, 75%);
+        left: 0;
+        margin: auto;
+        position: absolute;
+        text-align: center;
+        top: 65px;
+        width: 100%;
+        z-index: 150;
+    }
+
+    .menu-header-inner {
+        margin: auto;
+        max-width: @device-width-medium;
+        padding: 20px;
+    }
+
+    .menu-title {
+        color: @foreground-color-inverted;
+        margin-bottom: 15px;
+    }
+
+    .menu-body {
+        color: @foreground-color-inverted;
+        font-size: @body-text-font-size;
+    }
+
+    .menu-inner {
+        position:relative;
+    }
+
+    // Drag Handle
+    .menu-drag-handle {
+        cursor: -webkit-grab;
+        cursor: grab;
+        overflow: hidden;
+        position: relative;
+        z-index: 100;
+
+        &:active {
+            cursor: -webkit-grabbing;
+            cursor: grabbing;
+        }
+
+        .ie & {
+            cursor: move;
+        }
+    }
+
+    // Menu Arrows
+    .menu-arrow-up,
+    .menu-arrow-right,
+    .menu-arrow-down,
+    .menu-arrow-left {
+        color: @theme-black;
+        font-size: (@icon-size * 1.5);
+        font-weight: @font-weight-bold;
+        height: (@icon-size * 1.5);
+        position: fixed;
+        width: (@icon-size * 1.5);
+        z-index: 150;
+    }
+
+    .menu-arrow-up,
+    .menu-arrow-down {
+        left: 0;
+        margin: auto;
+        right: 0;
+    }
+
+    .menu-arrow-up {
+        top: 225px;
+    }
+
+    .menu-arrow-down {
+        bottom: 0;
+    }
+
+    .menu-arrow-right {
+        right: 0;
+        top: 50%;
+    }
+
+    .menu-arrow-left {
+        left: 0;
+        top: 50%;
+    }
+
+    // Menu Background
+    .menu-background {
+        background-position: center;
+        background-repeat: no-repeat;
+        left: 0;
+        position: absolute;
+        top: 0;
+    }
+
+    .menu-background {
+        z-index: 50;
+    }
+
+    // Drag Items
+    .menu-item-pin {
+        background-color: @secondary-color;
+        background-position: 15px center;
+        background-repeat: no-repeat;
+        background-size: 40px;
+        color: @theme-white;
+        font-size: 24px;
+        line-height: 100%;
+        padding: 20px 15px 15px 70px;
+        position: absolute;
+        text-decoration: none;
+        z-index: 125;
+
+        .no-touch &:hover {
+            background-color: darken(@secondary-color, 20%);
+            color: @theme-white;
+            .transition-all-colors;
+        }
+    }
+
+    // Menu QuickNav
+    .menu-quicknav {
+        bottom: 35px;
+        left: 0;
+        margin: auto;
+        max-width: 375px;
+        position: fixed;
+        right: 0;
+        text-align: center;
+        width: 100%;
+        z-index: 150;
+    }
+
+    .menu-quicknav-item {
+        display: inline-block;
+    }
+
+    .menu-quicknav-item-pin {
+        background-color: @secondary-color;
+        border-radius: 50%;
+        display: block;
+        height: 50px;
+        margin: 0 5px;
+        padding: 5px;
+        width: 50px;
+
+        .no-touch &:hover {
+            background-color: darken(@secondary-color, 20%);
+            .transition-background-color;
+        }
+    }
+
+    //Instruction Overlay
+    .instruction-overlay {
+        background-color: fade(@theme-rich-black, 75%);
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 151;
+        // display: none; // removed for trac #10
+    }
+
+    .instruction-overlay-inner {
+        bottom: 0;
+        height: 50%;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%;
+    }
+
+    .instruction-overlay-text {
+        color: @theme-white;
+        font-weight: @font-weight-bold;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .instruction-overlay-image {
+        height: 300px;
+        margin: auto;
+        width: 300px;
+    }
+}

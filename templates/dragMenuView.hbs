@@ -1,0 +1,72 @@
+<div class="menu-header no-select">
+    <div class="menu-header-inner">
+
+        {{#if title}}
+        <div class="menu-title">
+            <div class="menu-title-inner" role="heading" tabindex="0" aria-level="1">
+                {{{title}}}
+            </div>
+        </div>
+        {{/if}}
+
+        {{#if body}}
+        <div class="menu-body">
+            <div class="menu-body-inner accessible-text-block">
+                {{{a11y_text body}}}
+            </div>
+        </div>
+        {{/if}}
+
+    </div>
+</div>
+
+<div class="menu-inner">
+
+    <div class="menu-drag-handle" style="height: {{_dragMenu._background._height}}px; width: {{_dragMenu._background._width}}px;">
+
+        {{#if _dragMenu._hasArrows._isEnabled}}
+        <div class="menu-arrows">
+            <div class="menu-arrows-inner">
+                <div class="menu-arrow-up icon {{{_dragMenu._hasArrows._arrowTopIcon}}}"></div>
+                <div class="menu-arrow-right icon {{{_dragMenu._hasArrows._arrowRightIcon}}}"></div>
+                <div class="menu-arrow-down icon {{{_dragMenu._hasArrows._arrowDownIcon}}}"></div>
+                <div class="menu-arrow-left icon {{{_dragMenu._hasArrows._arrowLeftIcon}}}"></div>
+            </div>
+        </div>
+        {{/if}}
+
+        <div class="menu-background" style="background-image: url('{{_dragMenu._background._src}}'); height: {{_dragMenu._background._height}}px; width: {{_dragMenu._background._width}}px;"></div>
+
+        <div class="menu-item-container">
+            <div class="menu-item-container-inner">
+                {{!-- Drag Menu items are rendered here --}}
+            </div>
+        </div>
+
+        {{#if _dragMenu._hasQuicknav}}
+        <div class="menu-quicknav">
+            <div class="menu-quicknav-inner">
+                {{!-- Drag Menu Quicknav items are rendered here --}}
+            </div>
+        </div>
+        {{/if}}
+
+    </div>
+    
+    {{#if _dragMenu._instructionOverlay._isEnabled}}
+    <div class="instruction-overlay {{#unless _shouldDisplayMapInstruction}}display-none{{/unless}}" aria-hidden="true">
+        <div class="instruction-overlay-inner">
+
+            <div class="instruction-overlay-text">
+                {{_dragMenu._instructionOverlay.body}}
+            </div>
+
+            <div class="instruction-overlay-image">
+                <img src="{{_dragMenu._instructionOverlay._graphic}}"/>
+            </div>
+
+        </div>
+    </div>
+    {{/if}}
+
+</div>
