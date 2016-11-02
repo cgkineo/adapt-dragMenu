@@ -218,7 +218,7 @@ define([
 						: newTop;
 
 			if ($(".menu-inner").height() > $('.menu-drag-handle').height()) {
-				newLeft = ($(".menu-inner").height() / 2) - ($('.menu-drag-handle').height() / 2);
+				newTop = ($(".menu-inner").height() / 2) - ($('.menu-drag-handle').height() / 2);
 			}			
 
 			$('.drag-menu .menu-drag-handle').css({ "left": newLeft, "top": newTop });
