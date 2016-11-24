@@ -233,6 +233,7 @@ define([
 		},
 
 		onRemove: function() {
+			$(window).off("keypress", this.onKeyPress);
 			this.mc.destroy();
 		}
 
